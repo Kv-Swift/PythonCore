@@ -46,7 +46,7 @@ let package = Package(
         	dependencies: [
         	], 
         	resources: [
-        	.copy("lib")
+        	.copy("lib.zip")
         	], 
         	linkerSettings: [
         	]
