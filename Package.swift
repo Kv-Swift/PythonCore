@@ -45,6 +45,16 @@ let package = Package(
         	]
     	), 
     	.target(
+        	name: "PythonExtra", 
+        	dependencies: [
+        		.product(name: "Python"), 
+        	], 
+        	resources: [
+        	], 
+        	linkerSettings: [
+        	]
+    	), 
+    	.target(
         	name: "PythonLibrary", 
         	dependencies: [
         	], 
@@ -54,9 +64,9 @@ let package = Package(
         	linkerSettings: [
         	]
     	), 
-    	.binaryTarget(name: "libssl", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libssl.zip", checksum: "785775d468ac5b8afcddf5462eed49c21ddef2c7e83e9db530a3593c7eed3d12"), 
-    	.binaryTarget(name: "libcrypto", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libcrypto.zip", checksum: "75fbcc499d6b4463265cfbd0c9604993b2054802267ac3de23564635fa429d41"), 
-    	.binaryTarget(name: "libpython311", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libpython311.zip", checksum: "886d23de489e2ac18e25ebb4aefce7bb61004cca423d3712d796925d6b1a76cc"), 
-    	.binaryTarget(name: "libffi", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libffi.zip", checksum: "86f0b70d27990792ea44774853ba43887b4336d3be6adfb6a1e203445503c5da"), 
+    	.binaryTarget(name: "libssl", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libssl.zip", checksum: "675ac111d055fc80c4616eadbaa61a62638e35a69e5de9814096dbccffba169f"), 
+    	.binaryTarget(name: "libcrypto", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libcrypto.zip", checksum: "225e4c4f018ab7f660565e792ae745eabe36fe04788a914663b686266b325360"), 
+    	.binaryTarget(name: "libpython311", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libpython311.zip", checksum: "889fd84e3dedff6df3745485e6deec200099b84bfab9cdc8c813e51363074d56"), 
+    	.binaryTarget(name: "libffi", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.0/libffi.zip", checksum: "2607e3e1315db65e951a09ce8bac72b92f5f37632b0ab6ac82c53c06e5ed6179"), 
     ]
 )
