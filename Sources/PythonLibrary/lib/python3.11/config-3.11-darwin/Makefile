@@ -31,15 +31,15 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	3.11
 srcdir=		.
 
-abs_srcdir=	/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/build/python3/iphoneos-arm64/Python-3.11.6
-abs_builddir=	/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/build/python3/iphoneos-arm64/Python-3.11.6
+abs_srcdir=	/Users/runner/work/CoreBuilder/CoreBuilder/build/python3/iphoneos-arm64/Python-3.11.6
+abs_builddir=	/Users/runner/work/CoreBuilder/CoreBuilder/build/python3/iphoneos-arm64/Python-3.11.6
 
 
-CC=		/var/folders/7y/8l8l1yb93vqdk0bj60mvh0000000gn/T/tmpjk0snbzl
-CXX=		/var/folders/7y/8l8l1yb93vqdk0bj60mvh0000000gn/T/tmpvzub3cig
+CC=		/var/folders/x4/dc0wnrqs60v8cfdj3vx06s1h0000gn/T/tmpazd5nttz
+CXX=		/var/folders/x4/dc0wnrqs60v8cfdj3vx06s1h0000gn/T/tmpg36lgc44
 MAINCC=		$(CC)
 LINKCC=		$(PURIFY) $(MAINCC)
-AR=		/Applications/Xcode-15.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
+AR=		/Applications/Xcode_15.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
 READELF=	:
 SOABI=		cpython-311-darwin
 LDVERSION=	$(VERSION)$(ABIFLAGS)
@@ -82,7 +82,7 @@ MAKESETUP=      $(srcdir)/Modules/makesetup
 OPT=		-DNDEBUG -g -fwrapv -O3 -Wall
 BASECFLAGS=	 -Wsign-compare -Wunreachable-code
 BASECPPFLAGS=	
-CONFIGURE_CFLAGS=	-O3 -miphoneos-version-min=9.0 -I/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/ffi -I/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/openssl -I/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64 --sysroot=/Applications/Xcode-15.2.0.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk
+CONFIGURE_CFLAGS=	-O3 -miphoneos-version-min=9.0 -I/Users/runner/work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/ffi -I/Users/runner/work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/openssl -I/Users/runner/work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64 --sysroot=/Applications/Xcode_15.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk
 # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
 # Use it when a compiler flag should _not_ be part of the distutils CFLAGS
 # once Python is installed (Issue #21121).
@@ -95,7 +95,7 @@ CONFIGURE_LDFLAGS_NODIST=
 # of _bootstrap_python and _freeze_module tools, which don't need LTO.
 CONFIGURE_LDFLAGS_NOLTO=
 CONFIGURE_CPPFLAGS=	
-CONFIGURE_LDFLAGS=	-arch arm64 -L/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/lib/iphoneos -L/Applications/Xcode-15.2.0.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib -miphoneos-version-min=9.0 -undefined dynamic_lookup
+CONFIGURE_LDFLAGS=	-arch arm64 -L/Users/runner/work/CoreBuilder/CoreBuilder/dist/lib/iphoneos -L/Applications/Xcode_15.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib -miphoneos-version-min=9.0 -undefined dynamic_lookup
 # Avoid assigning CFLAGS, LDFLAGS, etc. so users can use them on the
 # command line to append to these values without stomping the pre-set
 # values.
@@ -134,7 +134,7 @@ MULTIARCH=	darwin
 MULTIARCH_CPPFLAGS = -DMULTIARCH=\"darwin\"
 
 # Install prefix for architecture-independent files
-prefix=		/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/root/python3
+prefix=		/Users/runner/work/CoreBuilder/CoreBuilder/dist/root/python3
 
 # Install prefix for architecture-dependent files
 exec_prefix=	${prefix}
@@ -211,9 +211,9 @@ LIBMPDEC_A= Modules/_decimal/libmpdec/libmpdec.a
 LIBEXPAT_A= Modules/expat/libexpat.a
 
 # OpenSSL options for setup.py so sysconfig can pick up AC_SUBST() vars.
-OPENSSL_INCLUDES=
-OPENSSL_LIBS=
-OPENSSL_LDFLAGS=
+OPENSSL_INCLUDES=-I/usr/local/Cellar/openssl@3/3.4.0/include
+OPENSSL_LIBS=-lssl -lcrypto
+OPENSSL_LDFLAGS=-L/usr/local/Cellar/openssl@3/3.4.0/lib
 OPENSSL_RPATH=
 
 # Module state, compiler flags and linker flags
@@ -308,27 +308,29 @@ MODULE_NIS_CFLAGS=
 MODULE_NIS_LDFLAGS=
 MODULE__SQLITE3_STATE=yes
 MODULE__SQLITE3_CFLAGS= -I$(srcdir)/Modules/_sqlite
-MODULE__SQLITE3_LDFLAGS=-lsqlite3
+MODULE__SQLITE3_LDFLAGS=-L/usr/lib -lsqlite3
 MODULE__TKINTER_STATE=missing
 MODULE__UUID_STATE=yes
 MODULE__UUID_CFLAGS=
 MODULE__UUID_LDFLAGS=
 MODULE_ZLIB_STATE=yes
 MODULE_ZLIB_CFLAGS=
-MODULE_ZLIB_LDFLAGS=-lz
+MODULE_ZLIB_LDFLAGS=-L/usr/lib -lz
 MODULE_BINASCII_STATE=yes
 MODULE_BINASCII_CFLAGS=-DUSE_ZLIB_CRC32 
-MODULE_BINASCII_LDFLAGS=-lz
+MODULE_BINASCII_LDFLAGS=-L/usr/lib -lz
 MODULE__BZ2_STATE=yes
 MODULE__BZ2_CFLAGS=
-MODULE__BZ2_LDFLAGS=-lbz2
-MODULE__LZMA_STATE=missing
+MODULE__BZ2_LDFLAGS=-L/usr/lib -lbz2
+MODULE__LZMA_STATE=yes
+MODULE__LZMA_CFLAGS=-I/usr/local/Cellar/xz/5.6.3/include
+MODULE__LZMA_LDFLAGS=-L/usr/local/Cellar/xz/5.6.3/lib -llzma
 MODULE__SSL_STATE=yes
-MODULE__SSL_CFLAGS=
-MODULE__SSL_LDFLAGS=  
+MODULE__SSL_CFLAGS=-I/usr/local/Cellar/openssl@3/3.4.0/include
+MODULE__SSL_LDFLAGS=-L/usr/local/Cellar/openssl@3/3.4.0/lib  -lssl -lcrypto
 MODULE__HASHLIB_STATE=yes
-MODULE__HASHLIB_CFLAGS=
-MODULE__HASHLIB_LDFLAGS=  
+MODULE__HASHLIB_CFLAGS=-I/usr/local/Cellar/openssl@3/3.4.0/include
+MODULE__HASHLIB_LDFLAGS=-L/usr/local/Cellar/openssl@3/3.4.0/lib   -lcrypto
 MODULE__TESTCAPI_STATE=yes
 MODULE__TESTCLINIC_STATE=yes
 MODULE__TESTINTERNALCAPI_STATE=yes
@@ -352,7 +354,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 'CC=/var/folders/7y/8l8l1yb93vqdk0bj60mvh0000000gn/T/tmpjk0snbzl' 'LD=/Applications/Xcode-15.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld' 'CFLAGS=-O3 -miphoneos-version-min=9.0 -I/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/ffi -I/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/openssl -I/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64 --sysroot=/Applications/Xcode-15.2.0.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk' 'LDFLAGS=-arch arm64 -L/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/lib/iphoneos -L/Applications/Xcode-15.2.0.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib -miphoneos-version-min=9.0 -undefined dynamic_lookup' 'ac_cv_file__dev_ptmx=yes' 'ac_cv_file__dev_ptc=no' 'ac_cv_little_endian_double=yes' 'ac_cv_func_memrchr=no' 'ac_cv_func_getentropy=no' 'ac_cv_func_getresuid=no' 'ac_cv_func_getresgid=no' 'ac_cv_func_setresgid=no' 'ac_cv_func_setresuid=no' 'ac_cv_func_plock=no' 'ac_cv_func_dup3=no' 'ac_cv_func_pipe2=no' 'ac_cv_func_preadv=no' 'ac_cv_func_pwritev=no' 'ac_cv_func_preadv2=no' 'ac_cv_func_pwritev2=no' 'ac_cv_func_mkfifoat=no' 'ac_cv_func_mknodat=no' 'ac_cv_func_posix_fadvise=no' 'ac_cv_func_posix_fallocate=no' 'ac_cv_func_sigwaitinfo=no' 'ac_cv_func_sigtimedwait=no' 'ac_cv_func_clock_settime=no' 'ac_cv_func_pthread_getcpuclockid=no' 'ac_cv_func_sched_setscheduler=no' 'ac_cv_func_sched_setparam=no' 'ac_cv_func_clock_gettime=no' 'ac_cv_func_rtpSpawn=no' 'ac_cv_func_fdwalk=no' 'ac_cv_func_futimesat=no' 'ac_cv_func_copy_file_range=no' 'ac_cv_func_fexecve=no' 'ac_cv_func_execve=no' 'ac_cv_func_sched_rr_get_interval=no' 'ac_cv_func_explicit_bzero=no' 'ac_cv_func_explicit_memset=no' 'ac_cv_func_close_range=no' 'ac_cv_search_crypt_r=no' 'ac_cv_func_fork1=no' 'ac_cv_func_system=no' 'ac_cv_func_clock_nanosleep=no' 'ac_cv_func_splice=no' 'ac_cv_func_mremap=no' '--host=aarch64-apple-ios' '--build=x86_64-apple-darwin' '--with-build-python=/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3' '--prefix=/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/root/python3' '--without-ensurepip' '--with-system-ffi' '--enable-ipv6' 'PYTHON_FOR_BUILD=_PYTHON_PROJECT_BASE=$(abs_builddir)                     _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM)                     PYTHONPATH=$(shell test -f pybuilddir.txt && echo $(abs_builddir)/`cat pybuilddir.txt`:)$(srcdir)/Lib                    _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_$(ABIFLAGS)_$(MACHDEP)_$(MULTIARCH)                    /Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python' 'build_alias=x86_64-apple-darwin' 'host_alias=aarch64-apple-ios'
+CONFIG_ARGS=	 'CC=/var/folders/x4/dc0wnrqs60v8cfdj3vx06s1h0000gn/T/tmpazd5nttz' 'LD=/Applications/Xcode_15.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld' 'CFLAGS=-O3 -miphoneos-version-min=9.0 -I/Users/runner/work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/ffi -I/Users/runner/work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64/openssl -I/Users/runner/work/CoreBuilder/CoreBuilder/dist/include/iphoneos-arm64 --sysroot=/Applications/Xcode_15.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk' 'LDFLAGS=-arch arm64 -L/Users/runner/work/CoreBuilder/CoreBuilder/dist/lib/iphoneos -L/Applications/Xcode_15.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib -miphoneos-version-min=9.0 -undefined dynamic_lookup' 'ac_cv_file__dev_ptmx=yes' 'ac_cv_file__dev_ptc=no' 'ac_cv_little_endian_double=yes' 'ac_cv_func_memrchr=no' 'ac_cv_func_getentropy=no' 'ac_cv_func_getresuid=no' 'ac_cv_func_getresgid=no' 'ac_cv_func_setresgid=no' 'ac_cv_func_setresuid=no' 'ac_cv_func_plock=no' 'ac_cv_func_dup3=no' 'ac_cv_func_pipe2=no' 'ac_cv_func_preadv=no' 'ac_cv_func_pwritev=no' 'ac_cv_func_preadv2=no' 'ac_cv_func_pwritev2=no' 'ac_cv_func_mkfifoat=no' 'ac_cv_func_mknodat=no' 'ac_cv_func_posix_fadvise=no' 'ac_cv_func_posix_fallocate=no' 'ac_cv_func_sigwaitinfo=no' 'ac_cv_func_sigtimedwait=no' 'ac_cv_func_clock_settime=no' 'ac_cv_func_pthread_getcpuclockid=no' 'ac_cv_func_sched_setscheduler=no' 'ac_cv_func_sched_setparam=no' 'ac_cv_func_clock_gettime=no' 'ac_cv_func_rtpSpawn=no' 'ac_cv_func_fdwalk=no' 'ac_cv_func_futimesat=no' 'ac_cv_func_copy_file_range=no' 'ac_cv_func_fexecve=no' 'ac_cv_func_execve=no' 'ac_cv_func_sched_rr_get_interval=no' 'ac_cv_func_explicit_bzero=no' 'ac_cv_func_explicit_memset=no' 'ac_cv_func_close_range=no' 'ac_cv_search_crypt_r=no' 'ac_cv_func_fork1=no' 'ac_cv_func_system=no' 'ac_cv_func_clock_nanosleep=no' 'ac_cv_func_splice=no' 'ac_cv_func_mremap=no' '--host=aarch64-apple-ios' '--build=x86_64-apple-darwin' '--with-build-python=/Users/runner/work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3' '--prefix=/Users/runner/work/CoreBuilder/CoreBuilder/dist/root/python3' '--without-ensurepip' '--with-system-ffi' '--enable-ipv6' 'PYTHON_FOR_BUILD=_PYTHON_PROJECT_BASE=$(abs_builddir)                     _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM)                     PYTHONPATH=$(shell test -f pybuilddir.txt && echo $(abs_builddir)/`cat pybuilddir.txt`:)$(srcdir)/Lib                    _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_$(ABIFLAGS)_$(MACHDEP)_$(MULTIARCH)                    /Users/runner/work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python' 'build_alias=x86_64-apple-darwin' 'host_alias=aarch64-apple-ios'
 
 
 # Subdirectories with code
@@ -402,9 +404,9 @@ BUILDPYTHON=	python$(BUILDEXE)
 
 HOSTRUNNER= 
 
-PYTHON_FOR_REGEN?=/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3
+PYTHON_FOR_REGEN?=/Users/runner/work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3
 UPDATE_FILE=$(PYTHON_FOR_REGEN) $(srcdir)/Tools/scripts/update_file.py
-PYTHON_FOR_BUILD=_PYTHON_PROJECT_BASE=$(abs_builddir) _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=$(shell test -f pybuilddir.txt && echo $(abs_builddir)/`cat pybuilddir.txt`:)$(srcdir)/Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_$(ABIFLAGS)_$(MACHDEP)_$(MULTIARCH) /Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3
+PYTHON_FOR_BUILD=_PYTHON_PROJECT_BASE=$(abs_builddir) _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=$(shell test -f pybuilddir.txt && echo $(abs_builddir)/`cat pybuilddir.txt`:)$(srcdir)/Lib _PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_$(ABIFLAGS)_$(MACHDEP)_$(MULTIARCH) /Users/runner/work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3
 # Single-platform builds depend on $(BUILDPYTHON). Cross builds use an
 # external "build Python" and have an empty PYTHON_FOR_BUILD_DEPS.
 PYTHON_FOR_BUILD_DEPS=
@@ -412,7 +414,7 @@ PYTHON_FOR_BUILD_DEPS=
 # Single-platform builds use Programs/_freeze_module.c for bootstrapping and
 # ./_bootstrap_python Programs/_freeze_module.py for remaining modules
 # Cross builds use an external "build Python" for all modules.
-PYTHON_FOR_FREEZE=/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3
+PYTHON_FOR_FREEZE=/Users/runner/work/CoreBuilder/CoreBuilder/dist/hostpython3/bin/python3
 FREEZE_MODULE_BOOTSTRAP=$(PYTHON_FOR_FREEZE) $(srcdir)/Programs/_freeze_module.py
 FREEZE_MODULE_BOOTSTRAP_DEPS=$(srcdir)/Programs/_freeze_module.py
 FREEZE_MODULE=$(FREEZE_MODULE_BOOTSTRAP)
@@ -470,7 +472,7 @@ IO_OBJS=	\
 
 ##########################################################################
 
-LIBFFI_INCLUDEDIR=	
+LIBFFI_INCLUDEDIR=	/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr/include/ffi
 
 ##########################################################################
 # Parser

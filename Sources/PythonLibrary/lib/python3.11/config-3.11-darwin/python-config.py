@@ -1,4 +1,4 @@
-#!/Users/ventura_coding/actions-runner/_work/CoreBuilder/CoreBuilder/dist/root/python3/bin/python3.11
+#!/Users/runner/work/CoreBuilder/CoreBuilder/dist/root/python3/bin/python3.11
 # -*- python -*-
 
 # Keep this script in sync with python-config.sh.in

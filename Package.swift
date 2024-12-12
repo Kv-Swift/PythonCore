@@ -64,10 +64,10 @@ let package = Package(
         	linkerSettings: [
         	]
     	),
-    	.binaryTarget(name: "libssl", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.2/libssl.zip", checksum: "64f63f9a13a80b16acd85b4d1a408cbab2d4676e59913a22dce99e68cb4b0c36"),
-    	.binaryTarget(name: "libcrypto", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.2/libcrypto.zip", checksum: "5b844932a36de40f2d0ea36c86451fed3bf7cfa62350ff1b1479ae782b242934"),
-    	.binaryTarget(name: "libpython311", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.2/libpython311.zip", checksum: "96c8062cd0a6cc40eb0430f51200f3ba35fdd2dce7eff2f6545a098f560c88a8"),
-    	.binaryTarget(name: "libffi", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.2/libffi.zip", checksum: "fbe1cb14412c8ae7e12b140d65859a1a7c2f26d2f52d105f79f6f27030242ac3"),
+    	.binaryTarget(name: "libssl", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.3/libssl.zip", checksum: "227a68b28550af5af8018219d94c2c58180296df8aad211417e253d022358eb4"),
+    	.binaryTarget(name: "libcrypto", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.3/libcrypto.zip", checksum: "550f1f522c05cde9202c1b4c73a7f825d33652664991a907f93c96224b0d2ca4"),
+    	.binaryTarget(name: "libpython311", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.3/libpython311.zip", checksum: "093b646541e97dfa11b0f2e1d357c512909145399683afed47ae4f889e20ef15"),
+    	.binaryTarget(name: "libffi", url: "https://github.com/KivySwiftLink/PythonCore/releases/download/311.0.3/libffi.zip", checksum: "f02859501ef5c4cbc673159424594b5b6fc76a214a566a366d7e5736b99f91cb"),
     ]
 
 )
