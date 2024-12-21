@@ -14,7 +14,7 @@ let package = Package(
         .target(
             name: "PythonCore",
             dependencies: [
-        		"PythonLibrary",
+        		"PythonExtra",
         		"libpython3.11",
         		"libssl",
         		"libcrypto",
@@ -50,23 +50,23 @@ let package = Package(
         ),
         .binaryTarget(
             name: "libpython3.11",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.11/libpython3.11.zip",
-            checksum: "792869fdc867eaadee0ee6d671eaff0020c3bf3900ae9d150a468068f9c06b3d"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.12/libpython3.11.zip",
+            checksum: "f2c61a44c8e230302adc0fb77bb43daa9d3e7c4f46d459ba70a8d3cd2f17395c"
         ),
         .binaryTarget(
             name: "libssl",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.11/libssl.zip",
-            checksum: "ce1562eb7a793d621f0665da9ef47f844e61b1d5237d42b1424432a749a5db65"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.12/libssl.zip",
+            checksum: "3503d66dd7a00d1d4c0fd154a766fcee1b40460dbf9f0bbf78a07721df49ace1"
         ),
         .binaryTarget(
             name: "libcrypto",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.11/libcrypto.zip",
-            checksum: "33797ed6f11aee8cb24b896ffe182a08f721a7d1197902bd54f2762d058c71fc"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.12/libcrypto.zip",
+            checksum: "960f6526addd304e88b2049a17cdb486d5a3fd0e9f0a5d551f60c645fca6ce6c"
         ),
         .binaryTarget(
             name: "libffi",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.11/libffi.zip",
-            checksum: "2989abc6145dd61a7d97eff82a40aba57c41b3664715e71953c19899f5bb0ac2"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.12/libffi.zip",
+            checksum: "eacd8774b8055ad12b50f5525fc9562dc4bb41d4a932d371789201091511630e"
         )
     ]
 )
