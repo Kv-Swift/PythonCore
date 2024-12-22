@@ -24,6 +24,7 @@ let package = Package(
         	],
             linkerSettings: [
         		.linkedLibrary("libz"),
+        		.linkedLibrary("libz"),
         		.linkedLibrary("libbz2"),
         		.linkedLibrary("libsqlite3")
         	],
@@ -53,23 +54,23 @@ let package = Package(
         ),
         .binaryTarget(
             name: "libpython3.11",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.15/libpython3.11.zip",
-            checksum: "ef8c0dc9d9d8b5360fba6b4de2ceabab0333369533297a96202a183925dadcef"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libpython3.11.zip",
+            checksum: "d0005fe40ecec48e393f35b0ad4dd42560a68b94d6d8cb4b760667b4816fcbc1"
         ),
         .binaryTarget(
             name: "libssl",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.15/libssl.zip",
-            checksum: "7b912018265417a5589dd41b2465fb1b63da86499e1b9137fefd2ec659640b14"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libssl.zip",
+            checksum: "988d28ec5b63504d6ba5e664fe69310e2b3df13d03684e6277ed5f45c37b06fe"
         ),
         .binaryTarget(
             name: "libcrypto",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.15/libcrypto.zip",
-            checksum: "95f6368fc759ce630a8f4c2632cc4b0152b53c35c9464a57d264960fcc2b92dd"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libcrypto.zip",
+            checksum: "d4121429095ab57cb28014321b55b6e139d3936350c3d9624760a601325b76c7"
         ),
         .binaryTarget(
             name: "libffi",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.15/libffi.zip",
-            checksum: "bd8faf27a628156438231556973dbfff88e313ae579e11c01289140454a11082"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libffi.zip",
+            checksum: "a58ff4a2aff8b737cc2ef71fcd39ec1b69453c8c981ec04ced0d76af1587a155"
         )
     ]
 )
