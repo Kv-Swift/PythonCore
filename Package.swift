@@ -23,10 +23,9 @@ let package = Package(
             resources: [
         	],
             linkerSettings: [
-        		.linkedLibrary("libz"),
-        		.linkedLibrary("libz"),
-        		.linkedLibrary("libbz2"),
-        		.linkedLibrary("libsqlite3")
+        		.linkedLibrary("z"),
+        		.linkedLibrary("bz2"),
+        		.linkedLibrary("sqlite3")
         	],
             plugins: []
         ),
@@ -54,23 +53,23 @@ let package = Package(
         ),
         .binaryTarget(
             name: "libpython3.11",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libpython3.11.zip",
-            checksum: "d0005fe40ecec48e393f35b0ad4dd42560a68b94d6d8cb4b760667b4816fcbc1"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.6/libpython3.11.zip",
+            checksum: "3dc095ca00a210949e97d291bd5e6a79e3e311697c205f7b4fdb83f11dc38b02"
         ),
         .binaryTarget(
             name: "libssl",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libssl.zip",
-            checksum: "988d28ec5b63504d6ba5e664fe69310e2b3df13d03684e6277ed5f45c37b06fe"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.6/libssl.zip",
+            checksum: "c41d608a3a6b98911cba322caab8ffc7bc8fdfec99404eaadc5c507c17a6c6d8"
         ),
         .binaryTarget(
             name: "libcrypto",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libcrypto.zip",
-            checksum: "d4121429095ab57cb28014321b55b6e139d3936350c3d9624760a601325b76c7"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.6/libcrypto.zip",
+            checksum: "098638d980dc52cc052f2c0aae76b83e02822338f7cf149004c3c566f719436d"
         ),
         .binaryTarget(
             name: "libffi",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.5/libffi.zip",
-            checksum: "a58ff4a2aff8b737cc2ef71fcd39ec1b69453c8c981ec04ced0d76af1587a155"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.0.6/libffi.zip",
+            checksum: "0f6c171f3254c79a20ad162ca690a30f39ad9c3fc23e90d7c63dcca3817ef3fa"
         )
     ]
 )
