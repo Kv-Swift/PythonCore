@@ -53,23 +53,23 @@ let package = Package(
         ),
         .binaryTarget(
             name: "libpython3.11",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.0/libpython3.11.zip",
-            checksum: "e78fdc7cdec747ad8478079e2c004df72a76dc9c27562c0596d412c6eb545a5b"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.1/libpython3.11.zip",
+            checksum: "5fadb8d731d30e6b00bbb5ada52bfc7eefca20fc04a71467f96df84ec3d4f28e"
         ),
         .binaryTarget(
             name: "libssl",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.0/libssl.zip",
-            checksum: "f2168406c9f2fd49322e2abaf4d4cfd22c42d54743a3fd2f870a7addd6a73434"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.1/libssl.zip",
+            checksum: "7fd9679ed09c6b9ca2c8522f343d64ec0524694852644288170c82e031cfafc4"
         ),
         .binaryTarget(
             name: "libcrypto",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.0/libcrypto.zip",
-            checksum: "20adcdb494b21ae568bd099b8ef1bc97ddfee850d46f10085385009c36875596"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.1/libcrypto.zip",
+            checksum: "6a3e8fa4f91295fed947d3598579efe180b8570c6e6294bf5f3329b45e41f3e8"
         ),
         .binaryTarget(
             name: "libffi",
-            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.0/libffi.zip",
-            checksum: "76b8e028fc12b6cc02add22d6133f887b62baf12bfbc32ed2719f96b40178459"
+            url: "https://github.com/kivyswiftlink/PythonCore/releases/download/311.1.1/libffi.zip",
+            checksum: "4fa0ca001bbb22fe4131a18ece680891dafa58ba5c55c6b860bb6a93d12e7093"
         )
     ]
 )
