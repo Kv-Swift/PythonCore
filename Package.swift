@@ -14,7 +14,7 @@ let package = Package(
         .target(
             name: "PythonCore",
             dependencies: [
-        		"PythonExtra",
+        		//"PythonExtra",
         		"libpython3.11",
         		"libssl",
         		"libcrypto",
@@ -26,17 +26,6 @@ let package = Package(
         		.linkedLibrary("z"),
         		.linkedLibrary("bz2"),
         		.linkedLibrary("sqlite3")
-        	],
-            plugins: []
-        ),
-        .target(
-            name: "PythonExtra",
-            dependencies: [
-        		"libpython3.11"
-        	],
-            resources: [
-        	],
-            linkerSettings: [
         	],
             plugins: []
         ),
