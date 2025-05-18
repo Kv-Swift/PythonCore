@@ -14,7 +14,6 @@ let package = Package(
         .target(
             name: "PythonCore",
             dependencies: [
-        		"PythonExtra",
         		"libpython3.11",
         		"libssl",
         		"libcrypto",
