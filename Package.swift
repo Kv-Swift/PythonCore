@@ -15,9 +15,9 @@ let package = Package(
             name: "PythonCore",
             dependencies: [
         		"libpython3.11",
-        		"libssl",
-        		"libcrypto",
-        		"libffi"
+        		.target(name: "libssl", condition: .when(platforms: [.iOS])),
+        		.target(name: "libcrypto", condition: .when(platforms: [.iOS])),
+        		.target(name: "libffi", condition: .when(platforms: [.iOS]))
         	],
             resources: [
         	],
@@ -25,7 +25,7 @@ let package = Package(
         		.linkedLibrary("z"),
         		.linkedLibrary("bz2"),
         		.linkedLibrary("sqlite3"),
-        		.linkedLibrary("ncurses")
+        		.linkedLibrary("ncurses", .when(platforms: [.macOS]))
         	],
             plugins: []
         ),
@@ -42,23 +42,23 @@ let package = Package(
         ),
         .binaryTarget(
             name: "libpython3.11",
-            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.15/libpython3.11.zip",
-            checksum: "5db50a1ca59cccf238d8b39d6e3a4c601074836229a606a4c98b600b77c1696f"
+            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.16/libpython3.11.zip",
+            checksum: "8a5bcae0870b1f02ec3f3c497689855d3aa678f82e578f185ad532d2bdeddcd0"
         ),
         .binaryTarget(
             name: "libssl",
-            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.15/libssl.zip",
-            checksum: "378554db386e57bb13fe1ba080a6be41b731df01c7dcc445a54169620cd9559e"
+            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.16/libssl.zip",
+            checksum: "b945b565bbbf3453b2cbf7181f6fa1d267240cb935791dac89658aa19debddce"
         ),
         .binaryTarget(
             name: "libcrypto",
-            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.15/libcrypto.zip",
-            checksum: "a08e98047353710e144f278d9bf2f0d4a32245ce33c280dbafeac6d4787c988a"
+            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.16/libcrypto.zip",
+            checksum: "2e50a378ce450e6316839d8de9f288c0ce9e5390db492ac5159fd2708bbe05a5"
         ),
         .binaryTarget(
             name: "libffi",
-            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.15/libffi.zip",
-            checksum: "64057a2c1698ad093060b5d761b7e1ec29592c64cc3bd1933af8c5511703de9d"
+            url: "https://github.com/kv-swift/PythonCore/releases/download/311.1.16/libffi.zip",
+            checksum: "dddc362131100483942c167438e339c03d58ccc148c7359888c584869683c54c"
         )
     ]
 )
